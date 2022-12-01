@@ -17,7 +17,7 @@ public class SetRepository {
         return set;
     }
 
-    public Set findBySetID(long setId) {
+    public Set findBySetId(long setId) {
         for (Set set: sets) {
             if (set.getSetId() == setId) {
                 return set;

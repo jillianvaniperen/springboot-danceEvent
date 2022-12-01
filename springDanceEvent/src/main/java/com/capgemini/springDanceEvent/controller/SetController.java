@@ -24,7 +24,7 @@ public class SetController {
 
     @GetMapping(value = "/{setId}")
     public Set findBySetID(@PathVariable long setId) {
-        return setService.findBySetID(setId);
+        return setService.findBySetId(setId);
     }
 }
 

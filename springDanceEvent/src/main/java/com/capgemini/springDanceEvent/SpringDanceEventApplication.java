@@ -27,7 +27,7 @@ public class SpringDanceEventApplication implements CommandLineRunner {
 		djRepository.save(new Dj(1, "DJ Jean", "Mellow", 25));
 		djRepository.save(new Dj(2, "La Fuente", "Retro", 21));
 		djRepository.save(new Dj(3, "Maraboo", "House", 23));
-		
+
 		setRepository.save(new Set(1, "Mellow Yellow", "17.00", "21.00", "Friday", "Main stage"));
 		setRepository.save(new Set(2, "Strictly Ballroom", "13:00", "15:00", "Saturday", "Small stage"));
 

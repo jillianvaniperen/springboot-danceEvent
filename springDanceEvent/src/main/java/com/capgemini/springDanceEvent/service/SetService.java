@@ -19,7 +19,7 @@ public class SetService {
         return setRepository.save(set);
     }
 
-    public Set findBySetID(long setId) {
-        return setRepository.findBySetID(setId); }
+    public Set findBySetId(long setId) {
+        return setRepository.findBySetId(setId); }
 
 }
