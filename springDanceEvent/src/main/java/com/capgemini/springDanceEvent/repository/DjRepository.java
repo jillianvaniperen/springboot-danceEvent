@@ -1,6 +1,6 @@
 package com.capgemini.springDanceEvent.repository;
 
-import com.capgemini.springDanceEvent.model.DJ;
+import com.capgemini.springDanceEvent.model.Dj;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -8,17 +8,17 @@ import java.util.List;
 
 @Component
 public class DjRepository {
-    List <DJ> djs = new ArrayList<>();
+    List <Dj> djs = new ArrayList<>();
 
-    public List<DJ> findAll() { return djs; }
+    public List<Dj> findAll() { return djs; }
 
-    public DJ save(DJ dj) {
+    public Dj save(Dj dj) {
         djs.add(dj);
         return dj;
     }
 
-    public DJ findByID (long ID) {
-        for (DJ dj: djs) {
+    public Dj findByID (long ID) {
+        for (Dj dj: djs) {
             if (dj.getID() == ID) {
                 return dj;
             }
@@ -27,12 +27,12 @@ public class DjRepository {
     }
 
     public void deleteByID (long id) {
-        List<DJ> newDJs = new ArrayList<>();
-        for (DJ dj: djs) {
+        List<Dj> newDjs = new ArrayList<>();
+        for (Dj dj: djs) {
             if (dj.getID() != id) {
-                newDJs.add(dj);
+                newDjs.add(dj);
             }
         }
-        djs = newDJs;
+        djs = newDjs;
     }
 }

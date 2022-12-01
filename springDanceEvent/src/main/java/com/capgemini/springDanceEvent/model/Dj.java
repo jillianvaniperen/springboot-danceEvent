@@ -1,13 +1,13 @@
 package com.capgemini.springDanceEvent.model;
 
-public class DJ {
+public class Dj {
     private long ID;
     private String name;
     private String musicStyle;
 
-    public DJ() {}
+    public Dj() {}
 
-    public DJ(long ID, String name, String musicStyle) {
+    public Dj(long ID, String name, String musicStyle) {
         this.ID = ID;
         this.name = name;
         this.musicStyle = musicStyle;

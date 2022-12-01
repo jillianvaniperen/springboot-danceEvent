@@ -1,6 +1,6 @@
 package com.capgemini.springDanceEvent.controller;
 
-import com.capgemini.springDanceEvent.model.DJ;
+import com.capgemini.springDanceEvent.model.Dj;
 import com.capgemini.springDanceEvent.service.DjService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class DjController {
     }
 
     @GetMapping(value = "/{id}")
-    public DJ findByID(@PathVariable long id) {
+    public Dj findByID(@PathVariable long id) {
         return djService.findByID(id);
     }
 
