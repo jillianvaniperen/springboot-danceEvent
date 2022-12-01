@@ -1,23 +1,35 @@
 package com.capgemini.springDanceEvent.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Dj {
-    private long ID;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "dj_id")
+    private long Id;
+
+    @Column(name = "dj_name")
     private String name;
+
+    @Column(name = "musicStyle")
     private String musicStyle;
+
+    @Column(name = "age")
     private int age;
 
     public Dj() {}
 
-    public Dj(long ID, String name, String musicStyle, int age) {
-        this.ID = ID;
+    public Dj(String name, String musicStyle, int age) {
         this.name = name;
         this.musicStyle = musicStyle;
         this.age = age;
     }
 
-    public long getID() { return this.ID; }
+    public long getId() { return this.Id; }
 
-    public void setID() { this.ID = ID; }
+    public void setId() { this.Id = Id; }
 
     public String getName() { return this.name; }
 
