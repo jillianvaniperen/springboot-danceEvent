@@ -12,26 +12,30 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringDanceEventApplication implements CommandLineRunner {
 
-	@Autowired
-	private SetRepository setRepository;
+    @Autowired
+    private SetRepository setRepository;
 
-	@Autowired
-	private DjRepository djRepository;
+    @Autowired
+    private DjRepository djRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringDanceEventApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringDanceEventApplication.class, args);
+    }
 
-	@Override
-	public void run(String... args) throws Exception {
-		djRepository.save(new Dj("DJ Jean", "Mellow", 25));
-		djRepository.save(new Dj("La Fuente", "Retro", 21));
-		djRepository.save(new Dj("Maraboo", "House", 23));
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("hoi");
 
-		setRepository.save(new Set("Mellow Yellow", "17.00", "21.00", "Friday", "Main stage"));
-		setRepository.save(new Set("Strictly Ballroom", "13:00", "15:00", "Saturday", "Small stage"));
-		
-	}
+        if (djRepository.findByName("DJ Jean").isEmpty()) {
+            djRepository.save(new Dj("DJ Jean", "Mellow", 25));
+        }
+        djRepository.save(new Dj("La Fuente", "Retro", 21));
+        djRepository.save(new Dj("Maraboo", "House", 23));
+
+        setRepository.save(new Set("Mellow Yellow", "17.00", "21.00", "Friday", "Main stage"));
+        setRepository.save(new Set("Strictly Ballroom", "13:00", "15:00", "Saturday", "Small stage"));
+
+    }
 }
 
 

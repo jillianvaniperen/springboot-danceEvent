@@ -3,6 +3,7 @@ package com.capgemini.springDanceEvent.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table (name = "Line-Up")
 public class Set {
 
     @Id
@@ -19,7 +20,7 @@ public class Set {
     @Column(name = "end_time")
     private String endTime;
 
-    @Column(name = "day")
+    @Column(name = "on_day")
     private String day;
 
     @Column(name = "stage")
