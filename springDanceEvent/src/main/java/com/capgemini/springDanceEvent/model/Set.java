@@ -2,6 +2,8 @@ package com.capgemini.springDanceEvent.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table (name = "Line-Up")
 public class Set {
@@ -25,6 +27,13 @@ public class Set {
 
     @Column(name = "stage")
     private String stage;
+
+    @ManyToMany
+    @JoinTable(
+            name = "set_djs",
+            joinColumns = @JoinColumn(name = "set_id"),
+            inverseJoinColumns = @JoinColumn(name = "dj_id"))
+    private List<Dj> djs;
 
     public Set() {}
 
@@ -77,4 +86,8 @@ public class Set {
     public void setStage(String stage) {
         this.stage = stage;
     }
+
+    public List<Dj> getDjs() { return djs; }
+
+    public void setDjs(List<Dj> djs) { this.djs = djs; }
 }

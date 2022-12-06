@@ -24,8 +24,6 @@ public class SpringDanceEventApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("hoi");
-
         if (djRepository.findByName("DJ Jean").isEmpty()) {
             djRepository.save(new Dj("DJ Jean", "Mellow", 25));
         }

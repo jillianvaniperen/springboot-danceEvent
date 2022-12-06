@@ -2,13 +2,15 @@ package com.capgemini.springDanceEvent.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Dj {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "dj_id")
-    private long Id;
+    private long id;
 
     @Column(name = "dj_name")
     private String name;
@@ -19,6 +21,9 @@ public class Dj {
     @Column(name = "age")
     private int age;
 
+    @ManyToMany(mappedBy = "djs")
+    private List<Set> sets;
+
     public Dj() {}
 
     public Dj(String name, String musicStyle, int age) {
@@ -27,9 +32,9 @@ public class Dj {
         this.age = age;
     }
 
-    public long getId() { return this.Id; }
+    public long getId() { return this.id; }
 
-    public void setId() { this.Id = Id; }
+    public void setId() { this.id = id; }
 
     public String getName() { return this.name; }
 
@@ -44,4 +49,8 @@ public class Dj {
     public int getAge() { return age; }
 
     public void setAge(int age) { this.age = age; }
+
+    public List<Set> getSets() { return sets; }
+
+    public void setSets(List<Set> sets) { this.sets = sets; }
 }
