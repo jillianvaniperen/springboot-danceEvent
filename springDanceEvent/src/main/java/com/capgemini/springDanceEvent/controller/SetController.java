@@ -1,12 +1,10 @@
 package com.capgemini.springDanceEvent.controller;
 
+import com.capgemini.springDanceEvent.model.Dj;
 import com.capgemini.springDanceEvent.model.Set;
 import com.capgemini.springDanceEvent.service.SetService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,9 +20,21 @@ public class SetController {
         return setService.findAll();
     }
 
-    @GetMapping(value = "/{setId}")
+    @GetMapping(value = "/{id}")
     public Set findById(@PathVariable long id) {
-        return setService.findBySetId(id);
+        return setService.findById(id);
+    }
+
+    @RequestMapping(value = "/delete/{id}")
+    public void deleteByID (@PathVariable long id) {
+        System.out.println(id);
+        setService.deleteById(id);
+    }
+
+    @RequestMapping("/add")
+    public void saveDj (@RequestBody Set set) {
+        System.out.println(set);
+        setService.save(set);
     }
 }
 

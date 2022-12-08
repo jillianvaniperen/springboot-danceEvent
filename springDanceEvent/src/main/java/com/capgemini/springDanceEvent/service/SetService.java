@@ -1,7 +1,7 @@
 package com.capgemini.springDanceEvent.service;
 
 import com.capgemini.springDanceEvent.model.Set;
-import com.capgemini.springDanceEvent.repository.SetRepository;
+import com.capgemini.springDanceEvent.repository.SetJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,15 +11,19 @@ import java.util.List;
 public class SetService {
 
     @Autowired
-    SetRepository setRepository;
+    SetJpaRepository setJpaRepository;
 
-    public List<Set> findAll() { return (List<Set>) setRepository.findAll(); }
+    public List<Set> findAll() { return (List<Set>) setJpaRepository.findAll(); }
 
     public Set save(Set set) {
-        return setRepository.save(set);
+        return setJpaRepository.save(set);
     }
 
-    public Set findBySetId(long id) {
-        return setRepository.findById(id); }
+    public Set findById(long id) {
+        return setJpaRepository.findById(id); }
+
+    public void deleteById(long id) {
+        setJpaRepository.deleteById(id);
+    }
 
 }

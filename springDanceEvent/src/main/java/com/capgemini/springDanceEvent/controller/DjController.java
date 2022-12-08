@@ -30,9 +30,10 @@ public class DjController {
         djService.deleteByID(id);
     }
 
-    @PostMapping("/")
-    public void insertDj (@RequestBody Dj dj) {
+    @RequestMapping("/add")
+    public void saveDj (@RequestBody Dj dj) {
         System.out.println(dj);
+        djService.save(dj);
     }
 
 

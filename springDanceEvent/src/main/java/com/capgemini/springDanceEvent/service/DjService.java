@@ -1,7 +1,7 @@
 package com.capgemini.springDanceEvent.service;
 
 import com.capgemini.springDanceEvent.model.Dj;
-import com.capgemini.springDanceEvent.repository.DjRepository;
+import com.capgemini.springDanceEvent.repository.DjJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,22 +11,22 @@ import java.util.List;
 public class DjService {
 
     @Autowired
-    DjRepository djRepository;
+    DjJpaRepository djJpaRepository;
 
     public List<Dj> findAll() {
-        return (List<Dj>) djRepository.findAll();
+        return (List<Dj>) djJpaRepository.findAll();
     }
 
     public Dj save(Dj dj) {
-        return djRepository.save(dj);
+        return djJpaRepository.save(dj);
     }
 
     public Dj findByID(long id) {
-        return djRepository.findById(id);
+        return djJpaRepository.findById(id);
     }
 
     public void deleteByID(long id) {
-        djRepository.deleteById(id);
+        djJpaRepository.deleteById(id);
     }
 
 }

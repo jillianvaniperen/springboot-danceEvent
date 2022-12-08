@@ -24,6 +24,8 @@ public class Dj {
     @ManyToMany(mappedBy = "djs")
     private List<Set> sets;
 
+    private List<Dj> djs;
+
     public Dj() {}
 
     public Dj(String name, String musicStyle, int age) {
@@ -53,4 +55,8 @@ public class Dj {
     public List<Set> getSets() { return sets; }
 
     public void setSets(List<Set> sets) { this.sets = sets; }
+
+    public List<Dj> getDjs() {
+        return this.djs;
+    }
 }
