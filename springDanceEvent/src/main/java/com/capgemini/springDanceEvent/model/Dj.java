@@ -1,5 +1,6 @@
 package com.capgemini.springDanceEvent.model;
 
+import com.capgemini.springDanceEvent.repository.DjJpaRepository;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -34,6 +35,16 @@ public class Dj {
         this.age = age;
     }
 
+    public static Dj GetBestDJ(boolean bestDJexists) {
+        if (bestDJexists)
+            return new Dj("Tiesto", "Techno", 80);
+        else
+            return null;
+    }
+
+//    public static Dj returnAgeIfAboveCertainAge(int age) {
+//        if (age >= )
+//    }
     public long getId() { return this.id; }
 
     public void setId() { this.id = id; }

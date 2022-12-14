@@ -9,4 +9,6 @@ public interface DjJpaRepository extends JpaRepository<Dj, Long> {
     List<Dj> findByName(String name);
 
     Dj findById(long id);
+
+    List<Dj> getAge(int age);
 }
